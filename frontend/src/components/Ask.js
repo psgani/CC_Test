@@ -29,7 +29,7 @@ const Ask = () => {
         },
       };
 
-      const res = await axios.get('http://localhost:5000/api/auth/getuser', config);
+      const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser', config);
       setUserRole(res.data.role);
     } catch (error) {
       console.error('Error getting user role:', error);
@@ -44,7 +44,7 @@ const Ask = () => {
         },
       };
 
-      const res = await axios.get('http://localhost:5000/api/auth/getuser', config);
+      const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser', config);
       return res.data.username;
     } catch (error) {
       console.error('Error getting user:', error);
@@ -68,7 +68,7 @@ const Ask = () => {
         },
       };
 
-      await axios.post('http://localhost:5000/api/question/uploadquestion', data, config);
+      await axios.post('https://cc-test-three.vercel.app/api/question/uploadquestion', data, config);
       alert('Question Submitted');
     } catch (error) {
       console.error('Error submitting question:', error);

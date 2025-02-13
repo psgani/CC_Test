@@ -16,7 +16,7 @@ const QuestionItem = ({ questions }) => {
           'auth-token': localStorage.getItem('token'),
         },
       };
-      const res = await axios.get('http://localhost:5000/api/auth/getuser', config);
+      const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser', config);
       return res.data.username;
     } catch (error) {
       console.error('Error getting user:', error);
@@ -39,7 +39,7 @@ const QuestionItem = ({ questions }) => {
         },
       };
 
-      await axios.post('http://localhost:5000/api/answer/uploadanswer', data, config);
+      await axios.post('https://cc-test-three.vercel.app/api/answer/uploadanswer', data, config);
       alert('Answer Submitted');
     } catch (error) {
       console.error('Error submitting answer:', error);

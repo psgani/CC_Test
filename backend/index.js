@@ -8,7 +8,7 @@ var app = express()
  
 app.use(cors(
     {
-     origin: ["https://career-counselling-seven.vercel.app/"],
+     origin: ["https://cc-test-three.vercel.app/"],
      methods:["POST", "GET"],
      credentails: true
     }

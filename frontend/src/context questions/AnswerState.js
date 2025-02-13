@@ -11,7 +11,7 @@ const AnswerState = (props) => {
 
   const getAnswers = async (questionId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/answer/getanswers/${questionId}`);
+      const response = await axios.get(`https://cc-test-three.vercel.app/api/answer/getanswers/${questionId}`);
       const fetchedAnswers = response.data.answers;
       setAnswers(fetchedAnswers);
       // console.log(response.data);

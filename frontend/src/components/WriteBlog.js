@@ -25,7 +25,7 @@ const WriteBlog= () =>{
             },
         };
 
-        const res = await axios.get('http://localhost:5000/api/auth/getuser',config)
+        const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser',config)
         return res.data.username;
 
         }catch(error){
@@ -51,7 +51,7 @@ const WriteBlog= () =>{
                 "Content-Type":"application/json",
             },
         };
-        await axios.post('http://localhost:5000/api/blog/uploadblog',data,config);
+        await axios.post('https://cc-test-three.vercel.app/api/blog/uploadblog',data,config);
         alert("Blog Submitted");
     }catch(error){
         console.log('Error submitting blog:',error);

@@ -21,7 +21,7 @@ const Home_page = () =>{
             //     },
             //   };
         
-            const res = await axios.get("http://localhost:5000/api/count/questioncount");
+            const res = await axios.get("https://cc-test-three.vercel.app/api/count/questioncount");
             // console.log(res.data.count);
             setcountq(res.data.count);
         }
@@ -37,7 +37,7 @@ const Home_page = () =>{
             //     },
             //   };
         
-            const res = await axios.get("http://localhost:5000/api/count/answerscount");
+            const res = await axios.get("https://cc-test-three.vercel.app/api/count/answerscount");
             // console.log(res.data.counta);
             setcounta(res.data.counta);
         }
@@ -53,7 +53,7 @@ const Home_page = () =>{
             //     },
             //   };
         
-            const res = await axios.get("http://localhost:5000/api/count/blogscount");
+            const res = await axios.get("https://cc-test-three.vercel.app/api/count/blogscount");
             // console.log(res.data.countb);
             setcountb(res.data.countb);
         }
@@ -70,7 +70,7 @@ const Home_page = () =>{
             //     },
             //   };
         
-            const res = await axios.get("http://localhost:5000/api/count/userscount");
+            const res = await axios.get("https://cc-test-three.vercel.app/api/count/userscount");
             // console.log(res.data.countu);
             setcountu(res.data.countu);
         }
