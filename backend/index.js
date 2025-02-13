@@ -6,13 +6,14 @@ var express = require('express');
 var cors = require('cors')
 var app = express()
  
-app.use(cors(
-    {
-     origin: ["https://cc-test-p3mt.vercel.app"],
-     methods:["POST", "GET"],
-     credentails: true
-    }
-   ))
+// app.use(cors(
+//     {
+//      origin: ["https://cc-test-p3mt.vercel.app"],
+//      methods:["POST", "GET"],
+//      credentails: true
+//     }
+//    ))
+app.use(cors({ origin: "https://cc-test-p3mt.vercel.app" }));
 
 app.use(express.json())
 
