@@ -57,9 +57,9 @@ const Navbar = () => {
       <div className="container1_main">
         <div className="header">
           <img className="logo_hostel" src={logo_career1} />
-          <h1 className="Title">CAREER COUNSELLING</h1>
+          <h1 className="Title">MENTORSHIP PLATFORM</h1>
           <div className="sub">
-            <p style={{ fontSize: 15 }}>Find the best path for your future</p>
+            <p style={{ fontSize: 15 }}>Get Mentored by your seniors</p>
             <h1 />
           </div>
           <div style={{ clear: 'both' }}></div>

@@ -1,5 +1,4 @@
 const express = require("express");
-
 const Blog = require("../models/Blog");
 const router = express.Router();
 const Question = require('../models/Question'); 

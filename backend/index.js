@@ -6,7 +6,13 @@ var express = require('express');
 var cors = require('cors')
 var app = express()
  
-app.use(cors())
+app.use(cors(
+    {
+     origin: ["https://career-counselling-seven.vercel.app/"],
+     methods:["POST", "GET"],
+     credentails: true
+    }
+   ))
 
 app.use(express.json())
 
