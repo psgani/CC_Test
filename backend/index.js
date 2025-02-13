@@ -13,7 +13,7 @@ var app = express()
 //      credentails: true
 //     }
 //    ))
-app.use(cors({ origin: "https://cc-test-p3mt.vercel.app" }));
+app.use(cors({ origin: "https://cc-test-p3mt.vercel.app", credentials: true }));
 
 app.use(express.json())
 
