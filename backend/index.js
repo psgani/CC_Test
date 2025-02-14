@@ -9,10 +9,12 @@ const app = express();
 // Apply CORS middleware BEFORE defining routes
 app.use(cors({
     origin: "https://cc-test-p3mt.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE","OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
+app.options('*', cors());
 
 // Middleware to handle JSON requests
 app.use(express.json());
@@ -23,6 +25,8 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
 // Define routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/question', require('./routes/question'));
@@ -31,7 +35,7 @@ app.use('/api/answer', require('./routes/answer'));
 app.use('/api/count', require('./routes/count'));
 
 // Handle preflight requests (OPTIONS method)
-app.options('*', cors());
+
 
 // Start server
 const port = 5000;

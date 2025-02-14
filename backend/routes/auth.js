@@ -19,7 +19,10 @@ router.post(
 
   async (req, res) => {
     try {
-      
+      res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
+      res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+      res.header("Access-Control-Allow-Credentials", "true");
       var success = false;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -66,6 +69,10 @@ router.post(
   
     async (req, res) => { 
       try {
+        res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
+        res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        res.header("Access-Control-Allow-Credentials", "true");
         var success = false
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -102,6 +109,10 @@ router.post(
   ); 
   router.get('/getuser',fetchUser,async(req,res)=>{
     try {
+      res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
+      res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+      res.header("Access-Control-Allow-Credentials", "true");
         const userId = req.user.id;
         const user = await User.findById(userId);
         return res.send(user)

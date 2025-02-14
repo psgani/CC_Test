@@ -4,6 +4,10 @@ const Question = require("../models/Question");
 const router = express.Router();
 
 router.post("/uploadquestion",async(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
     const {username, question} = req.body;
 
     const user = await User.findOne({ username }); 
@@ -18,6 +22,10 @@ router.post("/uploadquestion",async(req,res)=>{
 })
 
 router.get("/getquestions",async(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
     const output = await Question.find()
     return res.status(200).send({output})
 })

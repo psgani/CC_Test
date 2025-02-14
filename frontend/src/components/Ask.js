@@ -27,6 +27,7 @@ const Ask = () => {
         headers: {
           'auth-token': localStorage.getItem('token'),
         },
+        withCredentials: true 
       };
 
       const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser', config);
@@ -42,6 +43,7 @@ const Ask = () => {
         headers: {
           'auth-token': localStorage.getItem('token'),
         },
+        withCredentials:true
       };
 
       const res = await axios.get('https://cc-test-three.vercel.app/api/auth/getuser', config);
@@ -66,6 +68,7 @@ const Ask = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        withCredentials:true
       };
 
       await axios.post('https://cc-test-three.vercel.app/api/question/uploadquestion', data, config);
