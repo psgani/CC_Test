@@ -1,35 +1,40 @@
+const express = require('express');
+const cors = require('cors');
 const connectToMongo = require('./db');
 
 connectToMongo();
 
-var express = require('express');
-var cors = require('cors')
-var app = express()
- 
+const app = express();
 
+// Apply CORS middleware BEFORE defining routes
 app.use(cors({
     origin: "https://cc-test-p3mt.vercel.app",
-    methods:["POST", "GET", "PUT","DELETE"],
-    headers: {
-        "Access-Control-Allow-Origin": "https://cc-test-p3mt.vercel.app",
-        "Access-Control-Allow-Credentials": true
-    },
-    credentials:true
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
 }));
 
+// Middleware to handle JSON requests
+app.use(express.json());
 
-app.use(express.json())
+// Debugging: Log incoming requests
+app.use((req, res, next) => {
+    console.log(`Incoming request: ${req.method} ${req.url}`);
+    next();
+});
 
+// Define routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/question', require('./routes/question'));
+app.use('/api/blog', require('./routes/blog'));
+app.use('/api/answer', require('./routes/answer'));
+app.use('/api/count', require('./routes/count'));
+
+// Handle preflight requests (OPTIONS method)
+app.options('*', cors());
+
+// Start server
 const port = 5000;
-
-app.use('/api/auth',require('./routes/auth'))
-app.use('/api/question',require('./routes/question')) 
-app.use('/api/blog',require('./routes/blog'))
-app.use('/api/answer',require('./routes/answer'))
-app.use('/api/count',require('./routes/count'))
-
-  
-
-app.listen(port,()=>{
-    console.log(`example app listening on port ${port}`)
-})
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});
