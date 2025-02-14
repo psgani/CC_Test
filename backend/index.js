@@ -7,13 +7,14 @@ var cors = require('cors')
 var app = express()
  
 
-   app.use(cors({
+app.use(cors({
     origin: "https://cc-test-p3mt.vercel.app",
     methods:["POST", "GET", "PUT","DELETE"],
     headers: {
         "Access-Control-Allow-Origin": "https://cc-test-p3mt.vercel.app",
         "Access-Control-Allow-Credentials": true
     },
+    credentials:true
 }));
 
 
@@ -26,12 +27,7 @@ app.use('/api/question',require('./routes/question'))
 app.use('/api/blog',require('./routes/blog'))
 app.use('/api/answer',require('./routes/answer'))
 app.use('/api/count',require('./routes/count'))
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-  });
+
   
 
 app.listen(port,()=>{
