@@ -10,10 +10,6 @@ const User = require('../models/User');
 
 router.get("/questioncount", async(req,res)=>{
     try {
-        res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.header("Access-Control-Allow-Credentials", "true");
         const count = await Question.countDocuments();
         res.json({ count });
       } catch (error) {
@@ -24,10 +20,6 @@ router.get("/questioncount", async(req,res)=>{
 
 router.get("/answerscount", async(req,res)=>{
     try{
-        res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.header("Access-Control-Allow-Credentials", "true");
         const counta=await Answer.countDocuments();
         res.json({counta});
     }catch(error){
@@ -38,10 +30,6 @@ router.get("/answerscount", async(req,res)=>{
 
 router.get("/blogscount", async(req,res)=>{
     try{
-        res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.header("Access-Control-Allow-Credentials", "true");
         const countb = await Blog.countDocuments();
         res.json({countb});
     }
@@ -53,10 +41,6 @@ router.get("/blogscount", async(req,res)=>{
 
 router.get("/userscount", async(req,res)=>{
     try{
-        res.header("Access-Control-Allow-Origin", "https://cc-test-p3mt.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.header("Access-Control-Allow-Credentials", "true");
         const countu = await User.countDocuments();
         res.json({countu});
     }
